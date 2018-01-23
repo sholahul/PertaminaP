@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Input Display</title>
-</head>
-<body>
-	<h3>Input Data Display Production</h3>
-	<div>
-		{{ userlogin }} <br>
-		and it will be recorded in the system <br>
-		as the person who's responsible for data input <br> <br><br>
-	</div>
-
-	<a href="" title="">Input Data Proudction </a>  |
-	<a href="" title="">Display Information</a>
-
-	<p>hellow</p>
-</body>
+	<head>
+		<title>Input Display</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'login/slogin.css' %}" type="text/css" />
+		<script type="text/javascript" src="{% static 'login/waktu.js' %}"></script>
+	</head>
+	<body>
+		<h3>Input Data Display Production</h3>
+		<div>
+			You'are login as <b>{{request.user}} : </b>
+			<div id="jam-digital"> 
+				<div id="hours">
+					<p id="jam"></p>
+				</div>
+				<div id="minute">
+					<p id="menit"></p>
+				</div>
+				<div id="second">
+					<p id="detik"></p>
+				</div>
+			</div>
+			and it will be recorded in the system <br>
+			as the person who's responsible for data input <br> <br><br>
+		</div>
+		<a href="{%url 'InputDisplay'%}" title="">Input Data Proudction </a>  |
+		<a href="" title="">Display Information</a>  |
+		<a href="/logout/" title="">LogOut</a>
+		{% if request.user.groups.all.0.name == 'Asset1' %}
+			<p>blog1</p>
+		{% endif%}
+		{% if request.user.groups.all.0.name == 'Asset2' %}
+			<p>blog2</p>
+		{% endif%}
+		{% if request.user.groups.all.0.name == 'Asset3' %}
+			<p>blog3</p>
+		{% endif%}
+		{% if request.user.groups.all.0.name == 'Asset4' %}
+			<p>blog4</p>
+		{% endif%}
+		{% if request.user.groups.all.0.name == 'Asset5' %}
+			<p>blog5</p>
+		{% endif%}
+	</body>
 </html>
