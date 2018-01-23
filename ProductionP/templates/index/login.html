@@ -6,13 +6,18 @@
 		<table id="table1">
 			<tr>
 				<td>
+					<p><b>Login Form</b></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					{{ form.as_p }}
 					{% csrf_token %}
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input id="loginb" type="submit" value="Login">
+					<input id="loginb" type="submit" value="Log In">
 				</td>
 			</tr>
 		<!-- 	{{ form.as_p }}
