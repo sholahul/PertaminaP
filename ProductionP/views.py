@@ -31,7 +31,11 @@ def Logout(request):
     return HttpResponseRedirect(settings.LOGIN_URL)
 
 def Home(request):
-    return render(request, "index/home.html", {})
+    log_as = "You're login as %s" %(request.user)
+    context = {
+        "userlogin" : log_as
+    }
+    return render(request, "index/InputDisplay.html", context)
 
 def Blog(request):
     return render(request, "index/blog.html", {})

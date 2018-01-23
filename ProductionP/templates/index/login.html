@@ -1,30 +1,32 @@
-{% extends "index/Base_login.html" %}
-
-{% block content %}
-
-	<form method="post" action=".?next={{ redirect_to }}" >
-		<table id="table1">
-			<tr>
-				<td>
-					<p><b>Login Form</b></p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					{{ form.as_p }}
-					{% csrf_token %}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input id="loginb" type="submit" value="Log In">
-				</td>
-			</tr>
-		<!-- 	{{ form.as_p }}
-			{% csrf_token %} -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		{% load staticfiles %}
+		<link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans|Roboto|VT323" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'login/slogin.css' %}" type="text/css" />
+	</head>
+	<body id="loginbody">
+		<form method="post" action="" >
+			<table id="table1">
+				<tr>
+					<td>
+						<p><b>Login Form</b></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						{{ form.as_p }}
+						{% csrf_token %}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input id="loginb" type="submit" value="Log In">
+					</td>
+				</tr>
+			</table>
 			
-		</table>
-			
-	</form>
-
-{% endblock %}
+		</form>
+	</body>
+</html>
