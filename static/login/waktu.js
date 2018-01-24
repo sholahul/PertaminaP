@@ -6,3 +6,15 @@ function waktu() {
         document.getElementById("menit").innerHTML = tanggal.getMinutes();
         document.getElementById("detik").innerHTML = tanggal.getSeconds();
     } 
+
+
+
+// js DisplayInformation
+var timer = null;
+function auto_Refresh()
+{
+	window.location = 'DisplayInformation.asp';
+}
+function NamaBrowser()
+{
+}

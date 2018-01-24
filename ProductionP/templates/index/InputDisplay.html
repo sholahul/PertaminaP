@@ -3,7 +3,7 @@
 	<head>
 		<title>Input Display</title>
 		{% load staticfiles %}
-		<link rel="stylesheet" href="{% static 'login/slogin.css' %}" type="text/css" />
+		<link rel="stylesheet" href="{% static 'login/slogin2.css' %}" type="text/css" />
 		<script type="text/javascript" src="{% static 'login/waktu.js' %}"></script>
 	</head>
 	<body>
@@ -24,23 +24,29 @@
 			and it will be recorded in the system <br>
 			as the person who's responsible for data input <br> <br><br>
 		</div>
-		<a href="{%url 'InputDisplay'%}" title="">Input Data Proudction </a>  |
-		<a href="" title="">Display Information</a>  |
-		<a href="/logout/" title="">LogOut</a>
+		<a href="{%url 'InputDisplay' %}" title="">Input Data Proudction </a>  |	
+
+
 		{% if request.user.groups.all.0.name == 'Asset1' %}
+			<a href="{%url 'DisplayInformation1' %}" title="">Display Information1</a>  |
 			<p>blog1</p>
 		{% endif%}
 		{% if request.user.groups.all.0.name == 'Asset2' %}
+			<a href="{%url 'DisplayInformation2' %}" title="">Display Information</a>  |
 			<p>blog2</p>
 		{% endif%}
 		{% if request.user.groups.all.0.name == 'Asset3' %}
+			<a href="{%url 'DisplayInformation3' %}" title="">Display Information</a>  |
 			<p>blog3</p>
 		{% endif%}
 		{% if request.user.groups.all.0.name == 'Asset4' %}
+			<a href="{%url 'DisplayInformation' %}" title="">Display Information4</a>  |
 			<p>blog4</p>
 		{% endif%}
 		{% if request.user.groups.all.0.name == 'Asset5' %}
+			<a href="{%url 'DisplayInformation' %}" title="">Display Information5</a>  |
 			<p>blog5</p>
 		{% endif%}
+		<a href="/logout/" title="">LogOut</a>
 	</body>
 </html>

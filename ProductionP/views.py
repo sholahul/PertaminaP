@@ -33,5 +33,16 @@ def Logout(request):
 def InputDisplay(request):
     return render(request, "index/InputDisplay.html",{})
 
+def DisplayInformation1(request):
+    return render(request, "index/DisplayInformation1.html",{})
+def DisplayInformation2(request):
+    return render(request, "index/DisplayInformation2.html",{})
+def DisplayInformation3(request):
+    return render(request, "index/DisplayInformation3.html",{})
+def DisplayInformation4(request):
+    return render(request, "index/DisplayInformation4.html",{})
+def DisplayInformation5(request):
+    return render(request, "index/DisplayInformation5.html",{})
+
 def Blog(request):
     return render(request, "index/blog.html", {})
