@@ -4,8 +4,7 @@ from . import views
 urlpatterns = [
     url(r'^login/$', views.Login),
     url(r'^logout/$', views.Logout),
-    url(r'^InputDisplay/$', views.InputDisplay,name="InputDisplay"),
-
+    url(r'^Base_InputDisplay/$', views.Base_InputDisplay,name="Base_InputDisplay"),
     url(r'^DisplayInformation1/$', views.DisplayInformation1,name="DisplayInformation1"),
     url(r'^DisplayInformation2/$', views.DisplayInformation2,name="DisplayInformation2"),
     url(r'^DisplayInformation3/$', views.DisplayInformation3,name="DisplayInformation3"),

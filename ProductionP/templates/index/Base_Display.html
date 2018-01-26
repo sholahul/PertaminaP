@@ -6,7 +6,7 @@
 		{% endblock%}
 		
 		{% load staticfiles %}
-		<link rel="stylesheet" href="{% static 'login/sdisplays.css' %}" type="text/css" />
+		<link rel="stylesheet" href="{% static 'login/Displayinformation.css' %}" type="text/css" />
 		<link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}" type="text/css">
 
 
@@ -15,11 +15,14 @@
 	<body onLoad="timer = setTimeout('auto_Refresh()',90000);NamaBrowser();">
 		<header id="headertop" class="">
 			{% load staticfiles %}
-			<img id="imgheader" src="{% static 'login/image/PertaminaAsset2.jpg'%}" alt="">
+			<img id="imgheader" src="{% static 'login/image/Pertamina.png'%}" alt="">
 		</header>
 
-		{% block body %}
-		{% endblock %}
+		<div id="part1" class="container-fluid">
+  			{% block body %}
+			{% endblock %}
+  		</div>
+		
 		<footer>Copyright &copy; PT Pertamina  EP Asset II 2018. All Rights Reserved.</footer>
 		
 	</body>

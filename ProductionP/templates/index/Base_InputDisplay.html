@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input Display</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'login/inputdisplay1.css' %}" type="text/css" />
+		<script type="text/javascript" src="{% static 'login/waktu.js' %}"></script>
+	</head>
+	<body>
+		<div id="headertop" class="">
+			{% load staticfiles %}
+			<img id="imgheader" src="{% static 'login/image/Pertamina.png'%}" alt="">
+		</div>
+		<hr>
+		<div id="jam-digital">
+			<div id="hours">
+				<p id="jam"></p>
+			</div>
+			<div id="minute">
+				<p id="menit"></p>
+			</div>
+			<div id="second">
+				<p id="detik"></p>
+			</div>
+		</div>
+		<br>
+		<h3>Input Data Display Production</h3>
+		<div>
+			You'are login as <b>{{request.user}} : </b><br>
+			and it will be recorded in the system <br>
+			as the person who's responsible for data input <br> <br><br>
+		</div>
+		<a href="{%url 'Base_InputDisplay' %}" title="">Input Data Production </a>  |
+		{% if request.user.groups.all.0.name == 'Asset1' %}
+			<a href="{%url 'DisplayInformation1' %}" title="">Display Information</a>  |
+		{% endif%}
+
+		{% if request.user.groups.all.0.name == 'Asset2' %}
+			<a href="{%url 'DisplayInformation2' %}" title="">Display Information</a>  |
+		{% endif%}
+		
+		{% if request.user.groups.all.0.name == 'Asset3' %}
+			<a href="{%url 'DisplayInformation3' %}" title="">Display Information</a>  |
+		{% endif%}
+		
+		{% if request.user.groups.all.0.name == 'Asset4' %}
+			<a href="{%url 'DisplayInformation4' %}" title="">Display Information</a>  |
+		{% endif%}
+		
+		{% if request.user.groups.all.0.name == 'Asset5' %}
+			<a href="{%url 'DisplayInformation5' %}" title="">Display Information</a>  |
+		{% endif%}
+		{% if request.user.groups.all.0.name == 'ADM' %}
+			<p>You're not Authorized</p>
+		{% endif %}
+		<a href="/logout/" title="">LogOut</a>
+		
+
+		<!-- TABLE -->
+		{% if request.user.groups.all.0.name == 'Asset1'%}
+		<form name="form1" method="post" action="">
+			<table width="100%" border="0" cellspacing="0" cellpadding="2">
+				<tr>
+					<td width="48%">
+			
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Rantau Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Pangkalan Susu Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Lirik Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Jambi Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Ramba Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+					</td>
+
+
+					
+				<tr>
+					<td height="44"><input type="submit" name="button" id="button" value="Save Data"></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+	
+		{% endif%}
+		
+		{% if request.user.groups.all.0.name == 'Asset2'%}
+		<form name="form1" method="post" action="">
+			<table width="100%" border="0" cellspacing="0" cellpadding="2">
+				<tr>
+					<td width="48%">
+			
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Field Limau Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Own Prabumulih Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Paku Gajah Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">ASD Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Titis Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+					</td>
+
+
+					<td width="57%">
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">OBP Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">PSG Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Total Prabumulih Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Field Pendopo Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Field Adera Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+					</td>
+			</tr>
+				<tr>
+					<td height="44"><input type="submit" name="button" id="button" value="Save Data"></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+		{% endif%}
+
+		{% if request.user.groups.all.0.name == 'Asset3'%}
+		<form name="form1" method="post" action="">
+			<table width="100%" border="0" cellspacing="0" cellpadding="2">
+				<tr>
+					<td width="48%">
+			
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Subang Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Jatibarang Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Tambun Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+					</td>		
+				<tr>
+					<td height="44"><input type="submit" name="button" id="button" value="Save Data"></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+		{% endif%}
+		
+		{% if request.user.groups.all.0.name == 'Asset4'%}
+		<form name="form1" method="post" action="">
+			<table width="100%" border="0" cellspacing="0" cellpadding="2">
+				<tr>
+					<td width="48%">
+			
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Cepu Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Poleng Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Matindok Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+					</td>		
+				<tr>
+					<td height="44"><input type="submit" name="button" id="button" value="Save Data"></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+		{% endif%}
+		{% if request.user.groups.all.0.name == 'Asset5'%}
+		<form name="form1" method="post" action="">
+			<table width="100%" border="0" cellspacing="0" cellpadding="2">
+				<tr>
+					<td width="48%">
+			
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Sangatta Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Bunyu Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Tanjung Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+					</td>
+
+
+					<td width="57%">
+						<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Sangasanga Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Tarakan Field Production </span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>
+											<table width="540" border="1" cellpadding="10" cellspacing="0" bordercolor="#000000">
+								<tr>					
+									<td colspan="4" bgcolor="#666666"><span class="style2">Papua Field Production</span>
+										<input type="hidden" name="txtAssetCode" id="txtAssetCode" value="01" >
+										<input type="hidden" name="txtFieldCode" id="txtFieldCode" value="01" >
+									</td>
+								</tr>
+								<tr class="style1">
+									<td width="103">Oil Production</td>
+									<td width="93">SAS<br> -----</td>
+									<td width="85">YEST<br>	----- </td>
+									<td width="156">
+										<label>
+											<input name="txtOilPrd" type="text" id="txtOilPrd" size="10" maxlength="10">
+												BOpD
+											<input type="hidden" name="txtOilTgt" id="txtOilTgt" value="4444">
+										</label>
+									</td>
+								</tr>
+
+								<tr  class="style1">
+									<td >Gas Production</td>
+									<td>SAS <br> ----- </td>
+									<td>YEST<br> ----- </td>
+									<td>
+										<label>
+											<input name="txtGasPrd" type="text" id="txtGasPrd" size="10" maxlength="10">
+											MMSCFD
+											<input type="hidden" name="txtGasTgt" id="txtGasTgt"  value="5.5">
+										</label>
+									</td>
+								</tr>
+						</table>	
+					</td>
+			</tr>
+				<tr>
+					<td height="44"><input type="submit" name="button" id="button" value="Save Data"></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</form>
+
+		{% endif%}
+</body>
+</html>

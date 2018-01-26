@@ -1,0 +1,31 @@
+#imgheader{
+	height: 100px;
+	width: 500px;
+}
+#duaa{
+	background-color: red;
+	height: 100%;
+}
+
+#jam-digital{}
+#hours{float:left; width:25px; height:23px;background-color:rgb(13,81,188);}
+#minute{float:left; width:25px; height:23px;background-color:rgb(172,206,34);}
+#second{float:left; width:25px; height:23px;background-color:rgb(230,33,42)}
+#jam-digital p{color:black; font-size:16px; text-align:center; margin-top:4px}
+
+.style2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+.Kecil {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+}

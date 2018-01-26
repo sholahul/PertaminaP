@@ -5,33 +5,23 @@
 		{% load staticfiles %}
 		<link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans|Roboto|VT323" rel="stylesheet">
 		<!-- <link rel="stylesheet" href="{% static 'login/slogin.css' %}" type="text/css" /> -->
-		<link rel="stylesheet" href="{% static 'login/slogin2.css' %}" type="text/css" />
+		<link rel="stylesheet" href="{% static 'login/login.css' %}" type="text/css" />
 	</head>
-	<body id="loginbody">
-		<form method="post" action="" >
-			<table id="table1">
-				<tr>
-					<td>
-						<p><b>Login Form</b></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						{{ form.as_p }}
-						{% csrf_token %}
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input id="loginb" type="submit" value="Log In">
-					</td>
-				</tr>
-			</table>
-			
-		</form>
-
-	<!-- 	<footer>
-			<p class="aa">Copyright &copy; Dazzle 2017a</p>
-		</footer> -->
-	</body>
+		<div class="container">
+			<div class="card card-container">
+				<h2 class='login_title text-center'>Login</h2>
+				<hr>
+				<form class="form-sign" method="post" action="" >
+					<table id="table1">
+						<tr>
+							<td>
+							{{ form.as_p }}
+							{% csrf_token %}
+							</td>
+						</tr>
+					</table>
+					<button class="btn btn-lg btn-primary" type="submit">Login</button>		
+				</form>
+			</div>
+		</div>
 </html>

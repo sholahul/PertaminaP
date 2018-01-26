@@ -5,7 +5,7 @@ from PertaminaP import settings
 from .forms import LoginForm
 
 def Login(request):
-    next = request.GET.get('next', '/InputDisplay/')
+    next = request.GET.get('next', '/Base_InputDisplay/')
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -30,8 +30,8 @@ def Logout(request):
     logout(request)
     return HttpResponseRedirect(settings.LOGIN_URL)
 
-def InputDisplay(request):
-    return render(request, "index/InputDisplay.html",{})
+def Base_InputDisplay(request):
+    return render(request, "index/Base_InputDisplay.html",{})
 
 def DisplayInformation1(request):
     return render(request, "index/DisplayInformation1.html",{})
