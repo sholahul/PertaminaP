@@ -1,0 +1,86 @@
+{% extends 'index/Base_Display.html' %}
+{% block body %}
+	<br><br>
+	<div class="row container-fluid">
+		<div class="col-sm-4" style="background-color:transparent;">
+			<p>Update On : </p>
+			<p>--/--/---</p>
+			<table width="100%" class="table">
+				<thead>
+					<tr>
+						<th>Oil Production</th>
+						<th>Gas  Production</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Gambar 1</td>
+						<td>Gambar</td>
+					</tr>
+					<tr>
+						<td>Jumlah oil</td>
+						<td>Jumlah gas</td>
+					</tr>
+					<tr>
+						<td>target oil</td>
+						<td>target gas</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<p>Widget</p>
+			<table>
+				<tr>
+					<td>
+			            <script type="text/javascript" src="http://www.oil-price.net/TINY_CHART/gen.php?lang=en"></script>
+						<noscript> To get the <a href="http://www.oil-price.net/dashboard.php?lang=en#TINY_CHART">oil price</a>, please enable Javascript.</noscript>			
+					</td>
+			        <td>
+			            <script type="text/javascript" src="http://www.oil-price.net/widgets/brent_crude_price_tiny/gen.php?lang=en"></script>
+						<noscript> To get the BRENT <a href="http://www.oil-price.net/dashboard.php?lang=en#brent_crude_price_tiny">oil price</a>, please enable Javascript.</noscript>           
+					</td>
+			        <td>
+			            <script type="text/javascript" src="http://www.oil-price.net/widgets/natural_gas_small/gen.php?lang=en#natural_gas_small"> </script>
+						<noscript> To get the <a href="http://www.oil-price.net">natural gas price</a>, please enable Javascript. </noscript>
+           			</td>
+				</tr>
+			</table>
+			<br><br><br><br><br>
+		</div>
+
+		<div class="col-sm-1" width="10px" id="kanan">
+		</div>
+
+		<div class="col-sm-6" style="background-color:rgb(27,48,29);">
+			<table width="100%" class="table" border="solid">
+				<thead>
+					<tr>
+						<th>Nama Field</th>
+						<th>Oil Production</th>
+						<th>Gas  Production</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Cepu Field </td>
+						<td> - </td>
+						<td> - </td>
+					</tr>
+					<tr>
+						<td>Poleng Field</td>
+						<td> - </td>
+						<td> - </td>
+					</tr>
+					<tr>
+						<td>Matindok Field</td>
+						<td> - </td>
+						<td> - </td>
+					</tr>	
+				</tbody>
+			</table>
+			<br>
+			<marquee direction="left"><span class="style3">Oil Production 18,159 BOPD Gas Production 455 MMSCFD</span>
+    </marquee></td>
+		</div>
+	</div>
+{% endblock %}
