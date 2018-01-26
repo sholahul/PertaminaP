@@ -51,7 +51,10 @@
 			<a href="{%url 'DisplayInformation5' %}" title="">Display Information</a>  |
 		{% endif%}
 		{% if request.user.groups.all.0.name == 'ADM' %}
-			<p>You're not Authorized</p>
+			You're not Authorized
+				<a href="http://127.0.0.1:8000/admin/login/?next=/admin/" title="">Goes To Here</a>
+			
+
 		{% endif %}
 		<a href="/logout/" title="">LogOut</a>
 		
